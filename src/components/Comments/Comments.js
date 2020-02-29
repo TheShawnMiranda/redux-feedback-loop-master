@@ -4,7 +4,6 @@ import axios from 'axios';
 import '../App/App.css';
 import Results from '../Results/Results';
 
-
 class Comments extends Component {
     render() {
         return (

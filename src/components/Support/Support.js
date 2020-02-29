@@ -4,7 +4,6 @@ import axios from 'axios';
 import '../App/App.css';
 import Comments from '../Comments/Comments';
 
-
 class Support extends Component {
     render() {
         return (

@@ -4,7 +4,6 @@ import axios from 'axios';
 import '../App/App.css';
 import Support from '../Support/Support';
 
-
 class Understanding extends Component {
     render() {
         return (

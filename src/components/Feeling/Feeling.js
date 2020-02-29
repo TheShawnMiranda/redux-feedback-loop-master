@@ -4,7 +4,6 @@ import axios from 'axios';
 import '../App/App.css';
 import Understanding from '../Understanding/Understanding';
 
-
 class Feeling extends Component {
     render() {
         return (
