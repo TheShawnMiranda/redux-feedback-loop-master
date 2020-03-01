@@ -11,16 +11,20 @@ class Support extends Component {
     }
 
     inputValue = (propertyName, event) => {
-        this.setState ({
+        this.setState({
             [propertyName]: event.target.value
         })
     }
 
     submitter = () => {
-        this.props.dispatch({
-            type: 'SET_RESPONSE',
-            payload: this.state
-        })
+        if (this.state.support === 0) {
+            alert("Please input a number between 1 and 5!");
+        } else {
+            this.props.dispatch({
+                type: 'SET_RESPONSE',
+                payload: this.state
+            })
+        }
     }
 
     render() {

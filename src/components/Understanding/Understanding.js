@@ -17,10 +17,14 @@ class Understanding extends Component {
     }
 
     submitter = () => {
-        this.props.dispatch({
-            type: 'SET_RESPONSE',
-            payload: this.state
-        })
+        if (this.state.understanding === 0) {
+            alert("Please input a number between 1 and 5!");
+        } else {
+            this.props.dispatch({
+                type: 'SET_RESPONSE',
+                payload: this.state
+            })
+        }
     }
 
     render() {

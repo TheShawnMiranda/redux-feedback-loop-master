@@ -5,6 +5,7 @@ import '../App/App.css';
 import Understanding from '../Understanding/Understanding';
 
 class Feeling extends Component {
+
     state = {
         feeling: 0
     }
@@ -16,10 +17,14 @@ class Feeling extends Component {
     }
 
     submitter = () => {
-        this.props.dispatch({
-            type: 'SET_RESPONSE',
-            payload: this.state
-        })
+        if (this.state.feeling === 0) {
+            alert("Please input a number between 1 and 5!");
+        } else {
+            this.props.dispatch({
+                type: 'SET_RESPONSE',
+                payload: this.state
+            })
+        }
     }
 
     render() {
