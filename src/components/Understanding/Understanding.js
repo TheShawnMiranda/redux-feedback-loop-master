@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import '../App/App.css';
 import Support from '../Support/Support';
 
@@ -24,6 +24,7 @@ class Understanding extends Component {
                 type: 'SET_RESPONSE',
                 payload: this.state
             })
+            this.props.history.push('/support');
         }
     }
 
@@ -35,7 +36,7 @@ class Understanding extends Component {
                     <input type='number' min='1' max='5'
                         placeholder='On a scale from 1 to 5'
                         onChange={(event) => this.inputValue('understanding', event)} />
-                    <Link to='/support'><button onClick={this.submitter}>Next</button></Link>
+                    <button onClick={this.submitter}>Next</button>
                 </div>
                 <Route path='/support' component={Support} />
             </Router>

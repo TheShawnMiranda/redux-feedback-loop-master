@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import '../App/App.css';
 import Thanks from '../Thanks/Thanks'
 import axios from 'axios';
@@ -19,6 +19,7 @@ class Results extends Component {
             }
         }).then((response) => {
             console.log(response);
+            this.props.history.push('/thanks');
         }).catch((error) => {
             console.log(error);
         })
@@ -33,7 +34,7 @@ class Results extends Component {
                     <h3>Understanding: {this.props.reduxState.feedbackReducer[1].understanding}</h3>
                     <h3>Support: {this.props.reduxState.feedbackReducer[2].support}</h3>
                     <h3>Comments: {this.props.reduxState.feedbackReducer[3].comments}</h3>
-                    <Link to='/thanks'><button onClick={this.postToDatabase}>Submit</button></Link>
+                    <button onClick={this.postToDatabase}>Submit</button>
                 </div>
                 <Route path='/thanks' component={Thanks} />
             </Router>

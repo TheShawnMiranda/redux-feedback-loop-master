@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import '../App/App.css';
 import Results from '../Results/Results';
 
@@ -21,6 +21,7 @@ class Comments extends Component {
             type: 'SET_RESPONSE',
             payload: this.state
         })
+        this.props.history.push('/results');
     }
 
     render() {
@@ -30,7 +31,7 @@ class Comments extends Component {
                     <h1>Anything else you would like to add?</h1>
                     <input type='text' placeholder='Comments..?'
                         onChange={(event) => this.inputValue('comments', event)} />
-                    <Link to='/results'><button onClick={this.submitter}>Next</button></Link>
+                    <button onClick={this.submitter}>Next</button>
                 </div>
                 <Route path='/results' component={Results} />
             </Router>
