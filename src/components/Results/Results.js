@@ -3,8 +3,27 @@ import { connect } from 'react-redux';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import '../App/App.css';
 import Thanks from '../Thanks/Thanks'
+import axios from 'axios';
 
 class Results extends Component {
+
+    postToDatabase = () => {
+        axios({
+            method: 'POST',
+            url: '/feedback',
+            data: {
+                feeling: Number(this.props.reduxState.feedbackReducer[0].feeling),
+                understanding: Number(this.props.reduxState.feedbackReducer[1].understanding),
+                support: Number(this.props.reduxState.feedbackReducer[2].support),
+                comments: this.props.reduxState.feedbackReducer[3].comments
+            }
+        }).then((response) => {
+            console.log(response);
+        }).catch((error) => {
+            console.log(error);
+        })
+    }
+
     render() {
         return (
             <Router>
@@ -14,7 +33,7 @@ class Results extends Component {
                     <h3>Understanding: {this.props.reduxState.feedbackReducer[1].understanding}</h3>
                     <h3>Support: {this.props.reduxState.feedbackReducer[2].support}</h3>
                     <h3>Comments: {this.props.reduxState.feedbackReducer[3].comments}</h3>
-                    <Link to='/thanks'><button>Submit</button></Link>
+                    <Link to='/thanks'><button onClick={this.postToDatabase}>Submit</button></Link>
                 </div>
                 <Route path='/thanks' component={Thanks} />
             </Router>
