@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
-import axios from 'axios';
+import { HashRouter as Router } from 'react-router-dom';
 import '../App/App.css';
 
 class Thanks extends Component {
