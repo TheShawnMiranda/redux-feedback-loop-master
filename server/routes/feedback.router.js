@@ -7,9 +7,8 @@ router.post('/', (req, res) => {
     let queryString = `INSERT INTO "feedback"("feeling", "understanding",
                       "support", "comments")VALUES($1, $2, $3, $4);`;
     let values = [req.body.feeling, req.body.understanding, req.body.support, req.body.comments]
-    pool.query(queryString, values).then((result) => {
-        res.sendStatus(200);
-    }).catch((error) => {
+    pool.query(queryString, values)
+    .catch((error) => {
         console.log(error);
     })
 })

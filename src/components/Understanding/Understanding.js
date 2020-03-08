@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { HashRouter as Router } from 'react-router-dom';
 import '../App/App.css';
 
 class Understanding extends Component {
@@ -29,7 +28,6 @@ class Understanding extends Component {
 
     render() {
         return (
-            <Router>
                 <div className="Understanding">
                     <h1>How well did you understand the day's material?</h1>
                     <input type='number' min='1' max='5'
@@ -37,7 +35,6 @@ class Understanding extends Component {
                         onChange={(event) => this.inputValue('understanding', event)} />
                     <button onClick={this.submitter}>Next</button>
                 </div>
-            </Router>
         )
     }
 }

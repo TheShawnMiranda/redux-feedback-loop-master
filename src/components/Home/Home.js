@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { HashRouter as Router} from 'react-router-dom';
 import '../App/App.css';
 
 class Home extends Component {
@@ -10,11 +9,9 @@ class Home extends Component {
 
     render() {
         return (
-            <Router>
                 <div className="Home">
                     <button onClick={this.begin}>Begin</button>
                 </div>
-            </Router>
         )
     }
 }
