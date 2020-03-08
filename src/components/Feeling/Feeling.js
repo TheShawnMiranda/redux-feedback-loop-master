@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import '../App/App.css';
-import Understanding from '../Understanding/Understanding';
 
 class Feeling extends Component {
 
@@ -38,7 +37,6 @@ class Feeling extends Component {
                         onChange={(event) => this.inputValue('feeling', event)} />
                     <button onClick={this.submitter}>Next</button>
                 </div>
-                <Route path='/understanding' component={Understanding} />
             </Router>
         )
     }

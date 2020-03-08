@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import '../App/App.css';
-import Thanks from '../Thanks/Thanks'
 import axios from 'axios';
 
 class Results extends Component {
@@ -36,7 +35,6 @@ class Results extends Component {
                     <h3>Comments: {this.props.reduxState.feedbackReducer[3].comments}</h3>
                     <button onClick={this.postToDatabase}>Submit</button>
                 </div>
-                <Route path='/thanks' component={Thanks} />
             </Router>
         )
     }

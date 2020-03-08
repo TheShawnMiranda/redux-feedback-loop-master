@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import '../App/App.css';
-import Results from '../Results/Results';
 
 class Comments extends Component {
 
@@ -33,7 +32,6 @@ class Comments extends Component {
                         onChange={(event) => this.inputValue('comments', event)} />
                     <button onClick={this.submitter}>Next</button>
                 </div>
-                <Route path='/results' component={Results} />
             </Router>
         )
     }
